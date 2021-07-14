@@ -58,22 +58,24 @@ def smarter_computer_guess():
         computer_guess = random.randint(
             starting_number_in_range, ending_number_in_range)
         guessed_the_number = input(
-            f"Is your secret number = {computer_guess}?(Y/N): ")
+            f"Is your secret number = {computer_guess}?(Y/N): ").lower()
         if guessed_the_number == "N" or guessed_the_number == "n":
             user_response = input(
-                f"Is your secret number > {computer_guess}?(Y/N): ")
-            if user_response == "Y" or user_response == "y":
+                f"Is your secret number > {computer_guess}?(Y/N): ").lower()
+            if user_response == "y":
                 starting_number_in_range = computer_guess+1
                 computer_guess = random.randint(
                     starting_number_in_range, ending_number_in_range)
-            elif user_response == "N" or user_response == "n":
+            elif user_response == "n":
                 ending_number_in_range = computer_guess
                 computer_guess = random.randint(
                     starting_number_in_range, ending_number_in_range)
-        elif guessed_the_number == "Y" or guessed_the_number == "y":
+        elif guessed_the_number == "y":
             secret_number = computer_guess
             print(
                 f"I am a genius computer!!!Your secret number was {computer_guess}")
+        else:
+            print("That's an invalid response, PRESS Y for Yes OR N for No :)")
 
 
 # guess(88)
