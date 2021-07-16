@@ -9,9 +9,6 @@ def play(player):
 
 
 def game_play(player, computer):
-    # Is no input or invalid input-> exit game
-    if(player == '' or (player != 'r' and player != 'p' and player != 's')):
-        return "Invalid input!Try again!"
     # r > s, p > r, s > p
     if (player == 'r' and computer == 's') or (player == 'p' and computer == 'r') or (player == 's' and computer == 'p'):
         return f"You won!!!\nComputer played {computer}!"
