@@ -5,7 +5,7 @@ import string
 
 def get_valid_word():
     word = random.choice(words)
-    while '-' in word or ' ' in word:
+    while '-' in word or ' ' in word or len(word) < 4:
         word = random.choice(words)
     return word.upper()
 
