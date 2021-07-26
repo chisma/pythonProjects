@@ -49,7 +49,6 @@ class Hangman:
             user_letter = input("Guess a letter: ").upper()
             if user_letter in self.available_letters:
                 self.update_used_letters(user_letter)
-                # self.update_available_letters()
             # used_letters.add(user_letter)
                 if user_letter in self.letters_in_the_word:
                     self.update_letters_in_the_word(
